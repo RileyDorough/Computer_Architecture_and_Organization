@@ -1,0 +1,30 @@
+.C:c000  18		CLC
+.C:c001  A9 09		LDA #$09
+.C:c003  8D 1D C0	STA $C01D
+.C:c006  A9 06		LDA #$06
+.C:c008  8D 1E C0	STA $C01E
+.C:c00b  A9 00		LDA #$00 (#$FF)
+.C:c00d  8D 1F C0	STA $C01F
+.C:c010  4C 20 C0	JMP $C020
+.C:c013
+
+.C:c020			BNE $C040
+.C:c023  		LDA $C01D
+.C:c026			ADC $C01E
+.C:c029			STA $C060
+.C:c02c
+
+.C:c040			SEC
+.C:c041			LDA $C01D
+.C:c044			SBC $C01E
+.C:c047			STA $C060
+.C:c04a
+
+d c000 c070
+
+m c000 c070
+
+
+
+
+
